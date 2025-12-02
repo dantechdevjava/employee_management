@@ -9,6 +9,6 @@ public interface PermissionService {
     List<Permission> findAll();
     Optional<Permission> findById(Long id);
     Permission save(Permission permission);
-    void delete(Permission permission);
+    void deleteById(Long id);
     Permission update(Permission permission);
 }
