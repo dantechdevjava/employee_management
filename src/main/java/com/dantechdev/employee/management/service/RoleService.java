@@ -10,5 +10,5 @@ public interface RoleService {
     Optional<Role> findById(Long id);
     Role save(Role role);
     void deleteById(Long id);
-    Role update(Long id, Role role);
+    Role update(Role role);
 }

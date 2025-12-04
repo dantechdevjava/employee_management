@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String permissionName;
 }
