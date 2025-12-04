@@ -6,6 +6,7 @@ import com.dantechdev.employee.management.model.Role;
 import com.dantechdev.employee.management.service.PermissionService;
 import com.dantechdev.employee.management.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,9 +47,8 @@ public class RoleController {
         }
         if(!permissionsList.isEmpty()) {
             role.setPermissionsList(permissionsList);
-            Role createdRole = roleService.save(role);
 
-            return ResponseEntity.ok(createdRole);
+            return ResponseEntity.status(HttpStatus.CREATED).body(roleService.save(role));
         }
         return ResponseEntity.notFound().build();
     }
