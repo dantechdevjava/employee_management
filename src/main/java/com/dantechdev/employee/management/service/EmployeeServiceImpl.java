@@ -3,6 +3,7 @@ package com.dantechdev.employee.management.service;
 import com.dantechdev.employee.management.model.Employee;
 import com.dantechdev.employee.management.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,5 +37,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee update(Employee employee) {
         return employeeRepository.save(employee);
+    }
+
+    @Override
+    public String encryptPassword(String password) {
+        return new BCryptPasswordEncoder().encode(password);
     }
 }

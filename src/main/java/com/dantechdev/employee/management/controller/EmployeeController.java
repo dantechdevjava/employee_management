@@ -37,6 +37,8 @@ public class EmployeeController {
         Set<Role> rolesList = new HashSet<>();
         Role readRole;
 
+        employee.setPassword(employeeService.encryptPassword(employee.getPassword()));
+
         for(Role role : employee.getRolesList()) {
             readRole = roleService.findById(role.getId()).orElse(null);
             if(readRole != null) {
