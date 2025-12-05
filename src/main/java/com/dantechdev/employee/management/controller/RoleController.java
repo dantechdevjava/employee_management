@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/roles")
+@RequestMapping("/api/roles")
 public class RoleController {
     @Autowired
     private RoleService roleService;
